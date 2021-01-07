@@ -67,14 +67,5 @@ public class StudentDashboardController implements Initializable {
         stage.show();
     }
 
-    @FXML
-    protected void checkAttend()throws IOException {
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/fxmlpackage/StudentAttendanceFXML.fxml")));
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.setTitle("Attendance Portal");
-        stage.show();
-    }
 
 }

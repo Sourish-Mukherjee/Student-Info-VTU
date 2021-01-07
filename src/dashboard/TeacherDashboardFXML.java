@@ -73,12 +73,13 @@ public class TeacherDashboardFXML implements Initializable {
         stage.setTitle("Subject List Portal");
     }
 
-    // Opens The Attendance Screen panel after clicking the Attendance button
     @FXML
-    protected void openTeacherAttend() throws IOException {
+    protected void openTeacherMoocList() throws IOException {
         Stage stage = new Stage();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/fxmlpackage/TeacherAttendanceFXML.fxml"))));
-        stage.setTitle("Attendance-Panel");
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/fxmlpackage/MoocListFXML.fxml")));
+        scene.getStylesheets().add(getClass().getResource("/cssPackage/teacherMarks.css").toExternalForm());
+        stage.setScene(scene);
         stage.show();
+        stage.setTitle("MOOC List Portal");
     }
 }

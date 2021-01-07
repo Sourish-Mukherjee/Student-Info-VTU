@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="706.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.MoocListController">
+   <children>
+      <TableView id="moocListTable" fx:id="moocListTable" layoutX="101.0" layoutY="38.0" prefHeight="318.0" prefWidth="504.0">
+        <columns>
+          <TableColumn id="moocListTableMoocID" fx:id="moocListTableMoocID" prefWidth="100.0" text="Mooc ID" />
+          <TableColumn id="moocListTableCourse" fx:id="moocListTableCourse" prefWidth="150.0" text="Course Name" />
+            <TableColumn id="moocListTableAgency" fx:id="moocListTableAgency" prefWidth="150.0" text="Agency" />
+            <TableColumn id="moocListTableWeeks" fx:id="moocListTableWeeks" prefWidth="100.0" text="No of Weeks" />
+        </columns>
+      </TableView>
+      <Button fx:id="addButton" layoutX="534.0" layoutY="434.0" mnemonicParsing="false" onAction="#addCourseButton" prefHeight="33.0" prefWidth="114.0" text="Add Course" />
+      <TextField id="mlistTFMoocWeeks" fx:id="mlistTFMoocWeek" alignment="CENTER" layoutX="268.0" layoutY="493.0" promptText="No of Weeks" />
+      <TextField id="mlistTFMoocCourse" fx:id="mlistTFMoocCourse" alignment="CENTER" layoutX="268.0" layoutY="409.0" promptText="Course Name" />
+      <TextField id="mlistTFMoocID" fx:id="mlistTFMoocID" alignment="CENTER" layoutX="48.0" layoutY="409.0" promptText="Mooc ID" />
+      <TextField id="mlistTFMoocAgency" fx:id="mlistTFMoocAgency" alignment="CENTER" layoutX="48.0" layoutY="493.0" promptText="Agency" />
+   </children>
+</Pane>
