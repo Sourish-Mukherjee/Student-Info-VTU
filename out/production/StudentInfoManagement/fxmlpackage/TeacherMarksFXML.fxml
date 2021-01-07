@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="871.0" stylesheets="@../csspackage/teacherMarks.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.TeacherMarksController">
+   <children>
+      <TableView id="teaStuMarksTable" fx:id="teaStuMarksTable" layoutX="5.0" layoutY="4.0" prefHeight="254.0" prefWidth="871.0" stylesheets="@../csspackage/TableView.css">
+        <columns>
+          <TableColumn id="tableName" fx:id="tableName" prefWidth="97.59997844696045" text="Name" />
+          <TableColumn id="tableUsn" fx:id="tableUsn" prefWidth="113.5999755859375" text="USN" />
+            <TableColumn id="tableIat1" fx:id="tableIat1" prefWidth="87.20002746582031" text="IAT1" />
+            <TableColumn id="tableIat2" fx:id="tableIat2" prefWidth="79.20001220703125" text="IAT2" />
+            <TableColumn id="tableIat3" fx:id="tableIat3" prefWidth="71.2000732421875" text="IAT3" />
+            <TableColumn id="tableTotal" fx:id="tableTotal" prefWidth="90.39996337890625" text="TOTAL_INT" />
+            <TableColumn id="tableAvg" fx:id="tableAvg" prefWidth="84.0" text="AVERAGE" />
+            <TableColumn id="tableAvg" fx:id="tableAssign" prefWidth="115.2000732421875" text="Assig_Marks" />
+            <TableColumn id="tableAvg" fx:id="tableStatus" prefWidth="112.800048828125" text="STATUS" />
+        </columns>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </TableView>
+       <TextField id="updateAssign" fx:id="updateAssign" alignment="CENTER" layoutX="31.0" layoutY="276.0" promptText="Assignment Marks" />
+      <TextField id="updateIAT1" fx:id="updateIAT1" alignment="CENTER" layoutX="31.0" layoutY="334.0" promptText="IAT1 Marks" />
+      <TextField id="updateIAT2" fx:id="updateIAT2" alignment="CENTER" layoutX="31.0" layoutY="390.0" promptText="IAT2 Marks" />
+      <TextField id="updateIAT3" fx:id="updateIAT3" alignment="CENTER" layoutX="31.0" layoutY="469.0" promptText="IAT3 Marks" />
+      <Button id="updateButton" fx:id="updateButton" layoutX="285.0" layoutY="386.0" mnemonicParsing="false" onAction="#updateTable" prefHeight="25.0" prefWidth="88.0" text="Update" />
+      <Label id="updateIAT1" fx:id="updateTotal" alignment="CENTER" layoutX="448.0" layoutY="346.0" prefHeight="25.0" prefWidth="149.0" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font></Label>
+      <Label id="updateAvg" fx:id="updateAvg" alignment="CENTER" layoutX="448.0" layoutY="444.0" prefHeight="25.0" prefWidth="149.0" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font></Label>
+      <ComboBox id="marks_DropDown" fx:id="marks_DropDown" layoutX="677.0" layoutY="309.0" onAction="#updateTableonOption" prefWidth="150.0" promptText="Select" />
+   </children>
+</Pane>
