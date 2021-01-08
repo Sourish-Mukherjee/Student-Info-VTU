@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -10,25 +9,22 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="706.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.MoocEntryController">
    <children>
-      <TableView layoutX="52.0" layoutY="23.0" prefHeight="303.0" prefWidth="603.0" stylesheets="@../csspackage/TableView.css">
+      <TableView id="moocEntry_Table" fx:id="moocEntry_Table" layoutX="52.0" layoutY="23.0" prefHeight="303.0" prefWidth="603.0" stylesheets="@../csspackage/TableView.css">
         <columns>
-          <TableColumn prefWidth="75.0" text="Name" />
-          <TableColumn prefWidth="75.0" text="USN" />
-            <TableColumn maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Course Name" />
-            <TableColumn prefWidth="75.0" text="Agency" />
-            <TableColumn prefWidth="100.0" text="No of Weeks" />
-            <TableColumn prefWidth="75.0" text="Status" />
-            <TableColumn prefWidth="100.0" text="Final Marks" />
+          <TableColumn id="moocEntry_Name" fx:id="moocEntry_Name" prefWidth="75.0" text="Name" />
+          <TableColumn id="moocEntry_Name" fx:id="moocEntry_USN" prefWidth="75.0" text="USN" />
+            <TableColumn id="moocEntry_Course" fx:id="moocEntry_Course" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Course Name" />
+            <TableColumn id="moocEntry_Agency" fx:id="moocEntry_Agency" prefWidth="75.0" text="Agency" />
+            <TableColumn id="moocEntry_Week" fx:id="moocEntry_Week" prefWidth="100.0" text="No of Weeks" />
+            <TableColumn id="moocEntry_Status" fx:id="moocEntry_Status" prefWidth="75.0" text="Status" />
+            <TableColumn id="moocEntry_Marks" fx:id="moocEntry_Marks" prefWidth="100.0" text="Final Marks" />
         </columns>
       </TableView>
-      <Button fx:id="updateButton" layoutX="310.0" layoutY="477.0" mnemonicParsing="false" onAction="#updateInfo" prefHeight="33.0" prefWidth="114.0" text="Update" />
-      <MenuButton fx:id="moocIDMenu" layoutX="541.0" layoutY="402.0" mnemonicParsing="false" text="MoocID">
-        <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
-        </items>
-      </MenuButton>
-      <TextField fx:id="statusField" alignment="CENTER" layoutX="66.0" layoutY="364.0" promptText="Status" />
-      <TextField fx:id="marksField" alignment="CENTER" layoutX="66.0" layoutY="415.0" promptText="Final Marks" />
+      <Button id="moocEntry_updateButton" fx:id="moocEntry_updateButton" layoutX="297.0" layoutY="385.0" mnemonicParsing="false" onAction="#updateInfo" prefHeight="33.0" prefWidth="114.0" text="Update" />
+      <TextField id="moocEntry_updateStatus" fx:id="moocEntry_updateStatus" alignment="CENTER" layoutX="66.0" layoutY="389.0" promptText="Status" />
+      <TextField id="moocEntry_updateMarks" fx:id="moocEntry_updateMarks" alignment="CENTER" layoutX="66.0" layoutY="452.0" promptText="Final Marks" />
+      <ComboBox id="moocIDMenu" fx:id="moocIDMenu" layoutX="505.0" layoutY="389.0" onAction="#updateTableOption" prefWidth="150.0" />
+      <ComboBox id="studentMenu" fx:id="studentMenu" layoutX="505.0" layoutY="452.0" prefWidth="150.0" />
+      <Button id="moocEntry_AddButton" fx:id="moocEntry_AddButton" layoutX="296.0" layoutY="448.0" mnemonicParsing="false" onAction="#addTableOption" prefHeight="33.0" prefWidth="114.0" text="Add" />
    </children>
 </Pane>

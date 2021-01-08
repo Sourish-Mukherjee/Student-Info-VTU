@@ -82,4 +82,14 @@ public class TeacherDashboardFXML implements Initializable {
         stage.show();
         stage.setTitle("MOOC List Portal");
     }
+
+    @FXML
+    protected void openTeacherMoocEntry() throws IOException {
+        Stage stage = new Stage();
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/fxmlpackage/MoocEntryFXML.fxml")));
+        scene.getStylesheets().add(getClass().getResource("/cssPackage/teacherMarks.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("MOOC Entry Portal");
+    }
 }

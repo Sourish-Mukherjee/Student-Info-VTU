@@ -65,3 +65,33 @@
   -fx-text-fill: #ff5349;
   -fx-scale-y: 1.1;
 }
+#teaDashMoocEntry {
+  -fx-background-color: #ff5349;
+  -fx-background-radius: 10;
+  -fx-background-insets: 0;
+  -fx-text-fill: white;
+  -fx-padding: 5 5 5 5;
+  -fx-font-size: 1.2em;
+  -fx-font-weight: bold;
+}
+#teaDashMoocEntry:hover {
+  -fx-background-color: #fff;
+  -fx-text-fill: #ff5349;
+  -fx-scale-y: 1.1;
+}
+
+#teaDashMoocList {
+  -fx-background-color: #ff5349;
+  -fx-background-radius: 10;
+  -fx-background-insets: 0;
+  -fx-text-fill: white;
+  -fx-padding: 5 5 5 5;
+  -fx-font-size: 1.2em;
+  -fx-font-weight: bold;
+}
+
+#teaDashMoocList:hover {
+  -fx-background-color: #fff;
+  -fx-text-fill: #ff5349;
+  -fx-scale-y: 1.1;
+}

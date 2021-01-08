@@ -58,8 +58,8 @@ public class TeacherStudentInfoFXMLController implements Initializable {
         DataBaseHelper db = new DataBaseHelper();
         try {
             db.useDataBase("registerportal");
-            ResultSet set = db.getStatement().executeQuery("select name,usn,phone,branch,emailID,year from data, studententry"
-                    + " where data.id = studententry.link_id and studententry.name is not null ;");
+            ResultSet set = db.getStatement().executeQuery("select STUDENT_NAME,usn,PHONE_NUMBER,branch,emailID,ADMISSION_YEAR from data, STUDENT_INFO"
+                    + " where data.id = STUDENT_INFO.link_id and STUDENT_INFO.STUDENT_NAME is not null ;");
             while (set.next()) {
                 list.add(new Student(set.getString(1), set.getString(2), set.getString(3), set.getString(4), set.getString(5), set.getInt(6)));
             }
@@ -106,11 +106,11 @@ public class TeacherStudentInfoFXMLController implements Initializable {
         String newPhone = table_editPhone.getText();
         int id = new RegisterFXMLController().findID(db, oldEmail);
         db.getStatement().executeUpdate("Update data set EmailID ='" + newEmail + "' where ID =" + id);
-        db.getStatement().executeUpdate("Update studententry set Name = '" + newName + "',"
-                + "USN = '" + newUSN + "', Branch ='" + newBranch + "', Year ='" + newYear + "', Phone ='" + newPhone + "' WHERE LINK_ID =" + id);
+        db.getStatement().executeUpdate("Update STUDENT_INFO set STUDENT_NAME = '" + newName + "',"
+                + "USN = '" + newUSN + "', Branch ='" + newBranch + "', ADMISSION_YEAR ='" + newYear + "', PHONE_NUMBER ='" + newPhone + "' WHERE LINK_ID =" + id);
         list.clear();
-        ResultSet set = db.getStatement().executeQuery("select name,usn,phone,branch,emailID,year from data, studententry"
-                + " where data.id = studententry.link_id and studententry.name is not null ;");
+        ResultSet set = db.getStatement().executeQuery("select STUDENT_NAME,usn,PHONE_NUMBER,branch,emailID,ADMISSION_YEAR from data, STUDENT_INFO"
+                + " where data.id = STUDENT_INFO.link_id and STUDENT_INFO.STUDENT_NAME is not null ;");
         while (set.next()) {
             list.add(new Student(set.getString(1), set.getString(2), set.getString(3), set.getString(4), set.getString(5), set.getInt(6)));
         }

@@ -56,6 +56,8 @@ public class StudentEntryFXMLController {
                 "INT DEFAULT 0 , AVERAGE DECIMAL(4,2) DEFAULT 0, PASS_FAIL_STATUS VARCHAR(6), LINK_ID INT, SUBJECT_CODE VARCHAR(10)," +
                 " FOREIGN KEY(LINK_ID) REFERENCES STUDENT_INFO(LINK_ID), FOREIGN KEY(SUBJECT_CODE) REFERENCES SUBJECT_LIST(SUBJECT_CODE)");
         db.createTable("MOOC_LIST","MOOC_ID INT PRIMARY KEY ,"+" COURSE VARCHAR(30), AGENCY VARCHAR(15), NO_OF_WEEKS VARCHAR(2)");
+        db.createTable("MOOC_ENTRY","STUDENT_ID INT,PASS_FAIL_STATUS VARCHAR(15), FINAL_MARKS INT, MOOC_ID INT,"+
+                " FOREIGN KEY(STUDENT_ID) REFERENCES STUDENT_INFO(SL), FOREIGN KEY(MOOC_ID) REFERENCES MOOC_LIST(MOOC_ID)");
 
     }
 
@@ -77,6 +79,7 @@ public class StudentEntryFXMLController {
             ObservableList<SubjectList> subjectOptions = FXCollections.observableArrayList();
             while (set.next())
                 subjectOptions.add(new SubjectList(set.getString(1),set.getString(2),set.getString(3),set.getInt(4)));
+            db.getStatement().executeUpdate("Insert into MOOC_ENTRY(STUDENT_ID) VALUES('"+new RegisterFXMLController().findID(db, LoginController.getEmaiL())+"');");
             for(SubjectList subjectList : subjectOptions)
                 db.getStatement().executeUpdate("Insert into InternalMarksTable(SUBJECT_CODE,Link_ID) values('" +subjectList.getSubjectCode()+"',"+ new RegisterFXMLController().findID(db, LoginController.getEmaiL()) + ");");
         } catch (SQLException ex) {
